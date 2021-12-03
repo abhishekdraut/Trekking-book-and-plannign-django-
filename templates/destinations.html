@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="header_destination" style=" height:758px;">
+    <div class="background_image" style="background-image:url('/static/images/home_slider1.jpg' )"></div>
+</div>
+<br>
+<br>
+<div class="row">
+    <div class="col-lg-8">
+        <div class="news_container" style="padding-left:100px;text-align:center;">
+            {% for data in destination %}
+            <div style="border: 1px solid;width:fit-content;margin:100px;padding:10px 20px;border-radius:20px;background-color:black;">
+                <a href={% url 'invoicepage' %} style="color:white;"> Book a Trek with us at Juerney of {{data.one.Name}} </a>
+             </div>
+            <!-- News Post -->
+            <div class="news_post">
+                <div class="news_post_image"><img src="{{data.one.Img2}}" alt="img1"></div>
+                <div class="news_post_content">
+                    <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+                        <br>
+                        
+                        
+                    </div>
+                    <div class="news_post_title"><a href="#">Descrption</a></div>
+                    <div class="news_post_category">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <div class="news_post_text">
+                        <p> {{data.two.description}}</p>
+                    </div>
+                    <div class="news_post_link"><a href="#">Read More</a></div>
+                </div>
+            </div>
+
+            <!-- News Post -->
+            <div class="news_post">
+                <div class="news_post_image"><img src="{{data.one.Img1}}" alt=""></div>
+                <br>
+                
+                <div class="news_post_content">
+                    <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+                       
+                    </div>
+                    <div class="news_post_title"><a href="#">Route</a></div>
+                    <div class="news_post_category">
+                        
+                    </div>
+                    <div class="news_post_text">
+                        <p>{{data.two.Route}}</p>
+                    </div>
+                    <div class="news_post_link"><a href="#">Read More</a></div>
+                </div>
+            </div>
+
+            <!-- News Post -->
+            <div class="news_post">
+                <div class="news_post_image"><img src="{{data.one.Img3}}" alt=""></div>
+                <br>
+                
+                <div class="news_post_content">
+                    <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+                        
+                    </div>
+                    <div class="news_post_title"><a href="#">Time To Visit</a></div>
+                    <div class="news_post_category">
+                        <ul>
+                            
+                        </ul>
+                    </div>
+                    <div class="news_post_text">
+                        <p>{{data.two.Best_period}}</p>
+                    </div>
+                    <div class="news_post_link"><a href="#">Read More</a></div>
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+    </div>
+        
+    <div class="col-lg-4" style="padding-right:100px;">
+        <div style="border: 1px solid;width:fit-content;margin:0px 100px;padding:10px 20px;border-radius:20px;background-color:black;">
+            <a href={% url 'invoicepage' %} style="color:white;"> Book a Trek  </a>
+         </div>
+
+        <div class="news_sidebar">
+
+            <!-- Categories -->
+            <div class="categories" style="font-size:25px">
+                <div class="sidebar_title">Treck With Us</div>
+                
+            </div>
+
+            <!-- Latest News -->
+            <div class="latest">
+                <div class="sidebar_title" style="font-size:25px">Join the Juerney</div>
+               
+                <div class="latest_container">
+                    {% for image in render %}
+                    <!-- Latest Post -->
+                    <div class="latest_post d-flex flex-row align-items-start justify-content-start">
+                        <div class="latest_post_image"><img src="{{image.img}}" alt="newadvvasv"  width="400px"></div>
+                        
+                    </div>
+                    {% endfor %}
+                    
+                    
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+   
+</div>
+<br>
+<br>
+<div style="border: 1px solid;width:fit-content;margin:100px;padding:10px 20px;border-radius:20px;background-color:black;">
+   <a href={% url 'invoicepage' %} style="color:white;"> Book a Trek with us at Jurney of {{data.one.Name}} </a>
+</div>
+{% endfor %}
+
+
+{% endblock content %}

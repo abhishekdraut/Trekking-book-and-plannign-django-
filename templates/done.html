@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div style="max-width: 500px;color: black ;display: flex;flex-direction: column; gap:10px;border:1px solid">
+    <div id="header" style="background-color: rgb(105, 105, 105);height: 100px; ">
+        <h1>Booking Deatails</h1>
+    </div>
+       
+    <div class="body">
+    <div style="font-size:25px;color: grey;">Status:Done</div>
+    </div>
+
+    <div style="font-size:25px;color: grey;">{% for user in user %}
+        Username: {{user.username}}
+        {% endfor %}
+        </div>
+
+    <div style="font-size:25px;color: grey;">
+        {% for package in package %}
+    Booked packag: {{package.Days}}
+{% endfor %}
+
+    </div>
+
+
+<div style="font-size:25px;color: grey;">{% for destination in destination %}
+    Destination: {{destination.Name}}
+    {% endfor %}
+    
+</div>
+
+<div style="font-size:25px;color: grey;">{% for total in total %}
+    Your Amount {{total.total}}
+    {% endfor %}
+
+
+</div>
+</div>
+<br>
+<br>
+
+<div style="border:1px solid;width: fit-content;padding: 10px 20px;border-radius:20px;background-color:black;">
+    <a href= {% url 'alldestination' %} style="text-decoration: none;color:white;font-size:25px" >Return to home page</a>
+</div>
+
+    
+</body>
+</html>
+
+
+

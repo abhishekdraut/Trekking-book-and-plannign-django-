@@ -1,0 +1,106 @@
+<html>
+
+<head>
+
+	<style>
+        html, body {
+        display: flex;
+        justify-content: center;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 15px;
+        }
+        form {
+        width:50%;  
+            
+        height: 100%;
+        
+        }
+        input[type=text], input[type=password],input[type=email] {
+        width: 100%;
+        padding: 16px 8px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        border-radius:20px;
+        }
+        button {
+        background-color: black;
+        color: white;
+        padding: 14px 0;
+        margin: 10px 0;
+        border: none;
+        border-radius:20px;
+        cursor: grabbing;
+        width: 100%;
+        }
+        h1 {
+        text-align:center;
+        font-size:18;
+        }
+        button:hover {
+        opacity: 0.5;
+        }
+        .formcontainer {
+        text-align: center;
+        margin: 24px 50px 12px;
+        }
+        .container {
+        padding: 16px 0;
+        text-align:left;
+        }
+        span.psw {
+        float: right;
+        padding-top: 0;
+        padding-right: 15px;
+        }
+        /* Change styles for span on extra small screens */
+        @media screen and (max-width: 300px) {
+        span.psw {
+        display: block;
+        float: none;
+        }
+      </style>
+
+</head>
+
+<body>
+	
+	
+
+
+
+<form action= {% url 'register_' %} method="post">
+	{% csrf_token %}
+<h1>Sign UP </h1>
+<div class="formcontainer">
+<hr/>
+<div class="container">
+  <label for="first_name"><strong>First Name</strong></label>
+  <input type="text" placeholder="Enter Username" name="first_name" required>
+  <label for="last_name"><strong>Last Name</strong></label>
+  <input type="text" placeholder="Enter Username" name="last_name" required>
+  <label for="username"><strong>Username</strong></label>
+  <input type="text" placeholder="Enter Username" name="username" required>
+  <label for="email"><strong>Email</strong></label>
+  <input type="email" placeholder="Enter Username" name="email" required >
+  <label for="password1"><strong>Enter the password</strong></label>
+  <input type="password" placeholder="Enter Username" name="password1" required>
+  <label for="password2"><strong>Confirm the passsword</strong></label>
+  <input type="password" placeholder="Enter Username" name="password2" required>
+
+  
+ 
+  
+</div>
+<button type="submit">Sign UP</button>
+<a href={% url 'login_'%} style="color:grey ;font-size:20px;text-decoration:none">Login</a>
+</form>
+{% for message in messages  %}
+	<h3>{{message}}</h3>
+{% endfor %}
+
+
+</body>
+
+</html>
